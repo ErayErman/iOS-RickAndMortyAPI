@@ -33,10 +33,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zyV-HN-tso">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zyV-HN-tso">
+                                <rect key="frame" x="0.0" y="44" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i8x-cZ-BqH">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rwc-QN-Eo8">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -97,7 +97,7 @@
                             <constraint firstItem="iKe-tT-Zad" firstAttribute="trailing" secondItem="zyV-HN-tso" secondAttribute="trailing" id="9w4-Lb-WLW"/>
                             <constraint firstItem="zyV-HN-tso" firstAttribute="leading" secondItem="iKe-tT-Zad" secondAttribute="leading" id="bMy-pH-zSu"/>
                             <constraint firstItem="zyV-HN-tso" firstAttribute="top" secondItem="iKe-tT-Zad" secondAttribute="top" id="trM-UD-6Qu"/>
-                            <constraint firstItem="iKe-tT-Zad" firstAttribute="bottom" secondItem="zyV-HN-tso" secondAttribute="bottom" id="uQT-1V-AoN"/>
+                            <constraint firstItem="iKe-tT-Zad" firstAttribute="bottom" secondItem="zyV-HN-tso" secondAttribute="bottom" constant="10" id="uQT-1V-AoN"/>
                         </constraints>
                     </view>
                     <connections>
