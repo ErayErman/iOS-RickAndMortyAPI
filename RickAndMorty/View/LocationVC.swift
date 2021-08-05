@@ -7,23 +7,42 @@
 
 import UIKit
 
-class LocationVC: UIViewController {
+class LocationVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
+    let viewModel = LocationVM()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       setupUI()
+        setupVM()
+        
+    }
+    private func setupUI() {
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupVM() {
+        viewModel.getData()
+        viewModel.updateUI = { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+            
+        }
+        
     }
-    */
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10 //viewModel.results.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let data = viewModel.results[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        //cell.textLabel?.text = results.name
+        return cell
+    }
 }

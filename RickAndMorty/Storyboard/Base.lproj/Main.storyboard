@@ -114,9 +114,24 @@
                     <view key="view" contentMode="scaleToFill" id="4fg-sQ-ege">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-S0-PsY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gbN-oD-iII"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UIb-S0-PsY" firstAttribute="leading" secondItem="gbN-oD-iII" secondAttribute="leading" id="077-NO-Nyv"/>
+                            <constraint firstItem="gbN-oD-iII" firstAttribute="trailing" secondItem="UIb-S0-PsY" secondAttribute="trailing" id="34J-38-4D6"/>
+                            <constraint firstItem="gbN-oD-iII" firstAttribute="bottom" secondItem="UIb-S0-PsY" secondAttribute="bottom" id="EDr-eb-8cm"/>
+                            <constraint firstItem="UIb-S0-PsY" firstAttribute="top" secondItem="gbN-oD-iII" secondAttribute="top" id="SpL-y3-mZ0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="UIb-S0-PsY" id="RlU-Ny-sPy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d35-ui-psr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,6 +166,9 @@
                             <outlet property="delegate" destination="Y9z-vS-c33" id="zDu-Ty-e9q"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="collectionView" destination="tUt-Rm-SwY" id="gBf-TQ-ua8"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ec7-cx-3vb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

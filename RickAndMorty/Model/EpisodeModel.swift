@@ -9,21 +9,17 @@ import Foundation
 
 struct EpisodeDataModel: Codable {
     let success: Bool?
-    let data: [EpisodeModel]?
+    let info: Info?
+    let result: [EpisodeModel]?
 }
 
 
 struct EpisodeModel: Codable {
     
-    let count: Int?
-    let pages: Int?
-    let next: String?
-    let prev: String?
-    
     let id: Int?
     let name: String?
     let air_date: String?
-    let episode: Data?
+    let episode: String?
     let characters: [String]?
     let url: String?
     let created: String?

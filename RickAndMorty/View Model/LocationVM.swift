@@ -6,3 +6,24 @@
 //
 
 import Foundation
+import Alamofire
+
+
+class LocationVM {
+    var results: [LocationModel] = []
+    var updateUI: (() -> Void) = {}
+    
+    func getData(){
+        
+        AF.request("https://rickandmortyapi.com/api/location").responseJSON { [weak self] response in
+            guard let self = self else { return }
+            debugPrint(response)
+            let dataModel : LocationDataModel = try! JSONDecoder().decode(LocationDataModel.self, from: response.data!)
+            
+            self.updateUI()
+            
+        }
+    }
+ 
+    
+}

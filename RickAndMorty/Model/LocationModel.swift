@@ -10,15 +10,12 @@ import Foundation
 
 struct LocationDataModel: Codable {
     let success: Bool?
-    let data: [LocationModel]?
+    let info: Info?
+    let results: [LocationModel]?
 }
 
 
 struct LocationModel: Codable {
-    let count: Int?
-    let pages: Int?
-    let next: String?
-    let prev: String?
     
     let id: Int?
     let name: String?
@@ -29,3 +26,4 @@ struct LocationModel: Codable {
     let created: String?
     
 }
+

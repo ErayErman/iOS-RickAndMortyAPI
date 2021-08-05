@@ -9,15 +9,18 @@ import Foundation
 
 struct CharacterDataModel: Codable {
     let success: Bool?
-    let data: [CharacterModel]?
+    let info: Info
+    let results: [CharacterModel]?
 }
-
-
-struct CharacterModel: Codable {
+struct Info: Codable {
     let count: Int?
     let pages: Int?
     let next: String?
     let prev: String?
+}
+
+struct CharacterModel: Codable {
+    
     
     let id: Int?
     let name: String?
