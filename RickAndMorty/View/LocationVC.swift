@@ -36,13 +36,21 @@ class LocationVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 //viewModel.results.count
+        return viewModel.results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let data = viewModel.results[indexPath.row]
+        let data = viewModel.results[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        //cell.textLabel?.text = results.name
+        cell.textLabel?.text = data.name
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var sendedData = viewModel.results[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: false)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "LocationDetailsVC") as! LocationDetailsVC
+        //vc.viewModel = sendedData
+        navigationController?.present(vc, animated: true, completion: nil)
     }
 }

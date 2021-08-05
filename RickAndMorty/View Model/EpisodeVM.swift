@@ -18,8 +18,8 @@ class EpisodeVM {
         
         AF.request("https://rickandmortyapi.com/api/episode").responseJSON { [weak self] response in
             guard let self = self else { return }
-            //let dataModel : EpisodeDataModel = try! JSONDecoder().decode(EpisodeDataModel.self, from: response.data!)
-            //self.results = dataModel.results!
+            let dataModel : EpisodeDataModel = try! JSONDecoder().decode(EpisodeDataModel.self, from: response.data!)
+            self.results = dataModel.results!
             self.updateUI()
             
         }
