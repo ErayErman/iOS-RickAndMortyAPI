@@ -25,7 +25,7 @@ class CharacterVC: UIViewController {
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "imageCell")
+        //collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "imageCell")
     }
     
     private func setupVM() {
@@ -55,6 +55,13 @@ extension CharacterVC: UICollectionViewDataSource, UICollectionViewDelegate, UIC
             
         
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           
+           let width = self.view.frame.width/3
+           let height: CGFloat = 200
+           
+           return CGSize(width: width, height: height)
+       }
     
     
     
