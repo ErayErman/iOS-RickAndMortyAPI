@@ -25,7 +25,7 @@ class CharacterVC: UIViewController {
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        //collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "imageCell")
+       
     }
     
     private func setupVM() {
@@ -70,11 +70,10 @@ extension CharacterVC: UICollectionViewDataSource, UICollectionViewDelegate, UIC
         var sendedData = viewModel.results[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "CharacterDetailsVC") as! CharacterDetailsVC
+        let vm = CharacterDetailsVM.init(sendedData)
+        vc.viewModel = vm
         navigationController?.present(vc, animated: true, completion: nil)
     }
-    
-    
-    
     
     
 }

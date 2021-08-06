@@ -8,22 +8,24 @@
 import UIKit
 
 class EpisodeDetailsVC: UIViewController {
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var air_dateLabel: UILabel!
+    @IBOutlet weak var episodeLabel: UILabel!
+    var viewModel : EpisodeDetailsVM!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
+        
     }
+    func setupUI(){
+        
+        self.nameLabel.text = viewModel.results.name
+        self.air_dateLabel.text = viewModel.results.air_date
+        self.episodeLabel.text = viewModel.results.episode
+    }
+
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -50,6 +50,8 @@ class EpisodeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "EpisodeDetailsVC") as! EpisodeDetailsVC
+        let vm = EpisodeDetailsVM.init(sendedData)
+        vc.viewModel = vm
         navigationController?.present(vc, animated: true, completion: nil)
     }
     

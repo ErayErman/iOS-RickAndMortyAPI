@@ -50,7 +50,9 @@ class LocationVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "LocationDetailsVC") as! LocationDetailsVC
-        //vc.viewModel = sendedData
+        let vm = LocatiomDetailsVM.init(sendedData)
+        vc.viewModel = vm
         navigationController?.present(vc, animated: true, completion: nil)
     }
 }
+
