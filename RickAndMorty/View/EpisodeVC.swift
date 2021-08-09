@@ -46,7 +46,7 @@ class EpisodeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var sendedData = viewModel.results[indexPath.row]
+        let sendedData = viewModel.results[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: false)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "EpisodeDetailsVC") as! EpisodeDetailsVC

@@ -40,27 +40,18 @@ extension LocationDetailsVC: UICollectionViewDataSource, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let data = viewModel.results
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell2", for: indexPath) as! CollectionViewCell
-        
-        //let urlString: String = "https://rickandmortyapi.com/api/character/avatar/" + String(splitStr.endIndex) + ".jpeg"        //let url = URL(string: urlString)!
-        
-
-        //cell.imageView.af.setImage(withURL: url)
-
-        //cell.imageView.af.setImage(withURL: url)
-        //cell.nameLabel.text = data.name
-        
-            
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell2", for: indexPath) as! DetailsCollectionViewCell
+        cell.setupUI(data.residents![indexPath.row])
         return cell
             
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            
-        let width = self.view.frame.width/2
-        let height = self.view.frame.width/6
+        let width = self.view.frame.width / 3
+        let height = self.view.frame.height / 6
            
-           return CGSize(width: width, height: height)
+        return CGSize(width: width, height: height)
        }
     
     

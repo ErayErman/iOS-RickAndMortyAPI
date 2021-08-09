@@ -67,7 +67,7 @@ extension CharacterVC: UICollectionViewDataSource, UICollectionViewDelegate, UIC
            return CGSize(width: width, height: height)
        }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var sendedData = viewModel.results[indexPath.row]
+        let sendedData = viewModel.results[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "CharacterDetailsVC") as! CharacterDetailsVC
         let vm = CharacterDetailsVM.init(sendedData)
