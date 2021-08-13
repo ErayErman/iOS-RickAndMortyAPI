@@ -96,13 +96,30 @@ extension CharacterVC: UICollectionViewDataSource, UICollectionViewDelegate, UIC
            return CGSize(width: width, height: height)
        }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sendedData = viewModel.results[indexPath.row]
+        
+        
+        if filteredList.isEmpty {
+            let sendedData = viewModel.results[indexPath.row]
+            setupNavi(sendedData)
+        }else{
+            let fData = filteredList[indexPath.row]
+            setupNavi(fData)
+        }
+
+            
+            
+    }
+    
+    func setupNavi(_ data: CharacterModel) {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "CharacterDetailsVC") as! CharacterDetailsVC
-        let vm = CharacterDetailsVM.init(sendedData)
+        let vm = CharacterDetailsVM.init(data)
         vc.viewModel = vm
         navigationController?.present(vc, animated: true, completion: nil)
+        
     }
+   
     
     
 }
